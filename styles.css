@@ -1,0 +1,120 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: system-ui, "Segoe UI", sans-serif;
+  background: radial-gradient(ellipse at 50% 20%, #1e293b 0%, #0f172a 55%, #020617 100%);
+  color: #2b5a96;
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  padding: 1.5rem;
+}
+
+.hello {
+  margin: 0;
+  font-size: clamp(1.25rem, 4vw, 1.75rem);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: #94a3b8;
+}
+
+.world {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.letter {
+  appearance: none;
+  border: 2px solid #38bdf8;
+  background: linear-gradient(180deg, #0ea5e9 0%, #0369a1 100%);
+  color: #f8fafc;
+  font-size: clamp(2.5rem, 12vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1;
+  padding: 0.35em 0.45em;
+  border-radius: 0.35em;
+  cursor: pointer;
+  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0.35em 0 #075985, 0 0.5em 1.2em rgba(14, 165, 233, 0.35);
+  transition: transform 0.12s ease, box-shadow 0.12s ease, filter 0.12s ease;
+}
+
+.letter:hover {
+  transform: translateY(-3px);
+  filter: brightness(1.08);
+  box-shadow: 0 0.45em 0 #075985, 0 0.65em 1.4em rgba(14, 165, 233, 0.45);
+}
+
+.letter:active {
+  transform: translateY(2px);
+  box-shadow: 0 0.15em 0 #075985, 0 0.25em 0.5em rgba(14, 165, 233, 0.3);
+}
+
+.stone {
+  --stone-x: 0px;
+  --stone-y: 0px;
+  --stone-r: 0deg;
+  width: clamp(4rem, 18vw, 6rem);
+  height: clamp(4rem, 18vw, 6rem);
+  margin-top: 0.5rem;
+  border-radius: 45% 55% 48% 52% / 52% 48% 55% 45%;
+  background:
+    radial-gradient(120% 80% at 30% 25%, #78716c 0%, transparent 55%),
+    radial-gradient(100% 100% at 70% 70%, #44403c 0%, #292524 100%);
+  border: 3px solid #57534e;
+  box-shadow:
+    inset 2px 3px 8px rgba(255, 255, 255, 0.12),
+    inset -4px -4px 12px rgba(0, 0, 0, 0.45),
+    0 0.5em 1em rgba(0, 0, 0, 0.4);
+  transform: translate(var(--stone-x), var(--stone-y)) rotate(var(--stone-r));
+  cursor: grab;
+  outline: none;
+  transition: box-shadow 0.2s ease;
+}
+
+.stone:focus-visible {
+  box-shadow:
+    inset 2px 3px 8px rgba(255, 255, 255, 0.12),
+    inset -4px -4px 12px rgba(0, 0, 0, 0.45),
+    0 0 0 3px #38bdf8,
+    0 0.5em 1em rgba(0, 0, 0, 0.4);
+}
+
+.stone:active {
+  cursor: grabbing;
+}
+
+.stone.falling {
+  animation: stone-fall 1.15s cubic-bezier(0.45, 0, 0.55, 1) forwards;
+  pointer-events: none;
+}
+
+@keyframes stone-fall {
+  to {
+    transform: translate(var(--stone-x), calc(var(--stone-y) + 120vh)) rotate(calc(var(--stone-r) + 720deg));
+    opacity: 0.85;
+  }
+}
+
+.hint {
+  margin: 0;
+  max-width: 22rem;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #64748b;
+  line-height: 1.4;
+}
