@@ -3,27 +3,44 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Хэллоу, Ворлд</title>
+  <title>Hello World</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <a class="logo" href="./" aria-label="Главная">
+    <img src="Имг/пингвин.webp" alt="" width="80" height="80" decoding="async">
+  </a>
   <main class="page">
-    <p class="hello">Хэллоу,</p>
+    <p class="hello">Hello</p>
     <div class="world" role="group" aria-label="Ворлд">
-      <button type="button" class="letter" data-i="0">В</button>
-      <button type="button" class="letter" data-i="1">о</button>
-      <button type="button" class="letter" data-i="2">р</button>
-      <button type="button" class="letter" data-i="3">л</button>
-      <button type="button" class="letter" data-i="4">д</button>
+      <button type="button" class="letter" data-i="0">W</button>
+      <button type="button" class="letter" data-i="1">O</button>
+      <button type="button" class="letter" data-i="2">R</button>
+      <button type="button" class="letter" data-i="3">L</button>
+      <button type="button" class="letter" data-i="4">D</button>
     </div>
 
-    <div
-      id="stone"
-      class="stone"
-      tabindex="0"
-      role="button"
-      aria-label="Камень: клик — поворот, двойной клик — падение, стрелки — движение"
-    ></div>
+    <div class="stage">
+      <div class="person" id="person" aria-hidden="true">
+        <div class="person__head">
+          <div class="person__eye">
+            <span class="person__pupil"></span>
+          </div>
+          <div class="person__eye">
+            <span class="person__pupil"></span>
+          </div>
+        </div>
+        <div class="person__torso"></div>
+        <div class="person__legs"></div>
+      </div>
+      <div
+        id="stone"
+        class="stone"
+        tabindex="0"
+        role="button"
+        aria-label="Камень: клик — поворот, двойной клик — падение, стрелки — движение"
+      ></div>
+    </div>
     <p class="hint">Камень: клик — поворот · двойной клик — падение · стрелки — сдвиг</p>
   </main>
   <script src="stone.js"></script>

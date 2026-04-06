@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <title>Шаблон камня</title>
+  <defs>
+    <radialGradient id="st" cx="30%" cy="25%" r="70%">
+      <stop offset="0%" stop-color="#a8a29e"/>
+      <stop offset="50%" stop-color="#57534e"/>
+      <stop offset="100%" stop-color="#292524"/>
+    </radialGradient>
+  </defs>
+  <path fill="url(#st)" stroke="#44403c" stroke-width="3"
+    d="M60 8 C88 6 108 28 112 52 C116 78 98 104 72 110 C46 116 18 98 12 70 C6 42 28 12 60 8Z"/>
+  <ellipse cx="38" cy="38" rx="14" ry="10" fill="#fff" opacity="0.2"/>
+</svg>
